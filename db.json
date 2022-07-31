@@ -1,0 +1,74 @@
+{
+    "tables": [
+        {
+            "id": 1,
+            "name": "TableOne",
+            "sumCheck": 0,
+            "checkBoxes": [],
+            "rowData" : []
+        },
+        {
+            "id": 2,
+            "name": "TableTwo",
+            "sumCheck": 0,
+            "checkBoxes": [],
+            "rowData" : []
+        },
+        {
+            "id": 3,
+            "name": "TableTree",
+            "sumCheck": 0,
+            "checkBoxes": [],
+            "rowData" : []
+        },
+        {
+            "id": 4,
+            "name": "TableFour",
+            "sumCheck": 0,
+            "checkBoxes": [],
+            "rowData" : []
+        }
+    ],
+    "waiters": [
+        { "id": 1, "name": "Vasya" },
+        { "id": 2, "name": "Masha" },
+        { "id": 3, "name": "Kolya" }
+    ],
+    "menu": [
+        {
+            "id": 1,
+            "categories": "Drinks",
+            "products": [
+                { "id": 101, "name": "cola", "price": 10 },
+                { "id": 102, "name": "water", "price": 20 },
+                { "id": 103, "name": "viski", "price": 30 },
+                { "id": 104, "name": "vodka", "price": 50 },
+                {
+                    "id": 105,
+                    "name": "apple juice",
+                    "price": 25
+                },
+                { "id": 106, "name": "abc", "price": 25 },
+                { "id": 107, "name": "zxe", "price": 35 },
+                { "id": 108, "name": "xzq", "price": 45 },
+                { "id": 109, "name": "bb", "price": 25 },
+                { "id": 110, "name": "cc", "price": 35 },
+                { "id": 111, "name": "dd", "price": 45 }
+            ]
+        },
+        {
+            "id": 2,
+            "categories": "Dishes",
+            "products": [
+                { "id": 201, "name": "potato", "price": 70 },
+                { "id": 202, "name": "salad", "price": 30 },
+                { "id": 203, "name": "burger", "price": 80 },
+                { "id": 204, "name": "pizza", "price": 50 },
+                { "id": 205, "name": "dessert", "price": 50 },
+                { "id": 206, "name": "aaa", "price": 25 },
+                { "id": 207, "name": "zzz", "price": 35 },
+                { "id": 208, "name": "xxx", "price": 45 }
+            ]
+        }
+    ]
+}

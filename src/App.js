@@ -1,35 +1,43 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import style from "./App.module.css";
-import SelectWaiters from "./components/SelectWaiters";
-import Button from "@mui/material/Button";
-import EnhancedTable from "./components/EnhancedTable";
 import { useDispatch, useSelector } from "react-redux";
-import TableApi from "./store/actions/TableApi";
 import { getTablesList } from "./store/actions/table";
+import Navigation from "./components/Navigation";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import "./App.module.css";
+import NotFound from "./components/NotFound";
+import Table from "./pages/Table/Table";
+import { getMenu } from "./store/actions/menu";
+import { getWaiters } from "./store/actions/waiters";
 
 function App() {
     const dispatch = useDispatch();
-    const tables = useSelector((state) => state.tables.tables);
+    const tables = useSelector((state) => state.tablesReducer.tables);
 
-    useEffect(() => dispatch(getTablesList()), []);
+    useEffect(() => {
+        dispatch(getTablesList());
+        dispatch(getMenu());
+        dispatch(getWaiters());
+    }, []);
+    
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
+        <Box sx={{ flexGrow: 1, maxWidth: "95%", margin: "0 auto" }}>
+            <Navigation />
+            <Routes>
+                <Route path="/" element={<Home />} />
                 {tables.map((table) => {
                     return (
-                        <Grid key={table.id} item xs={4}>
-                            <h2 className={style.table}>{table.name}</h2>
-                            <SelectWaiters table={table} />
-                            <Button variant="text">Open bill</Button>
-                            <EnhancedTable table={table} />
-                            <div>Sum of your bill : {table.sumBill}</div>
-                        </Grid>
+                        <Route
+                            key={table.id}
+                            path={`Table=${table.id}`}
+                            element={<Table table={table} />}
+                        />
                     );
                 })}
-            </Grid>
+                <Route path="*" element={<NotFound />} />
+            </Routes>
         </Box>
     );
 }

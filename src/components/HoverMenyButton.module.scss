@@ -1,0 +1,40 @@
+.menu {
+    position: relative;
+}
+
+.list {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    transform: translateY(-2px);
+    z-index: 10;
+}
+.close {
+    display: none;
+}
+.button {
+    border: none;
+    font-family: "Roboto", sans-serif;
+    background-color: transparent;
+    font-size: 20px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: red;
+    padding: 0;
+}
+
+.link {
+    color: blue;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    &:hover{
+        background-color: grey;
+    }
+}
