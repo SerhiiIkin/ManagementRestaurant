@@ -22,7 +22,7 @@ export default function CategoryDropdown({ title }) {
             button.current.click();
             setIsOpen(true);
         }
-    }, [isOverButton, isOverList]);
+    }, [isOpen, isTouchInput,isOverButton, isOverList]);
 
     useEffect(() => {
         setIsTouchInput(false);

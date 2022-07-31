@@ -10,7 +10,7 @@ export const ACTION_TABLE_MULTI = "ACTION_TABLE_MULTI";
 export function getTablesList() {
     return (dispatch) => {
         Api.getTables().then((tablesServer) => {
-            return dispatch({ type: ACTION_TABLE_GET, payload: tablesServer });
+            return dispatch({ type: ACTION_TABLE_GET, payload: tablesServer[0].tables });
         });
     };
 }
