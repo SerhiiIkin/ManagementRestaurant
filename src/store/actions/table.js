@@ -6,13 +6,27 @@ export const ACTION_TABLE_RESET = "ACTION_TABLE_RESET";
 export const ACTION_TABLE_SET_CHECKBOX = "ACTION_TABLE_SET_CHECKBOX";
 export const ACTION_TABLE_SET_DATA = "ACTION_TABLE_SET_DATA";
 export const ACTION_TABLE_MULTI = "ACTION_TABLE_MULTI";
+export const ACTION_TABLE_GET_ERROR = "ACTION_TABLE_GET_ERROR";
+export const ACTION_TABLE_FETCHING = "ACTION_TABLE_FETCHING";
 
 export function getTablesList() {
     return (dispatch) => {
-        Api.getTables().then((tablesServer) => {
-            return dispatch({ type: ACTION_TABLE_GET, payload: tablesServer[0].tables });
+        Api().then((tablesServer) => {
+            return dispatch({
+                type: ACTION_TABLE_GET,
+                payload: tablesServer[0].tables,
+            });
         });
     };
+}
+
+export function fetching() {
+    return { type: ACTION_TABLE_FETCHING };
+}
+
+export function fetchingError(message) {
+    console.log(message);
+    return { type: ACTION_TABLE_GET_ERROR, payload: message };
 }
 
 export function addOrSub(id, row, isSelected) {

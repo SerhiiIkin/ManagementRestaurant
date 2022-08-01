@@ -5,15 +5,25 @@ import {
     ACTION_TABLE_SET_CHECKBOX,
     ACTION_TABLE_SET_DATA,
     ACTION_TABLE_MULTI,
+    ACTION_TABLE_GET_ERROR,
 } from "../actions/table";
 
 const initialState = {
     tables: [],
+    loading: false,
+    error: "",
 };
+
 function tablesReducer(state = initialState, { type, payload }) {
     switch (type) {
         case ACTION_TABLE_GET:
             return { ...state, tables: payload };
+        case ACTION_TABLE_GET_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error: payload,
+            };
         case ACTION_TABLE_SET_CHECKBOX:
             return {
                 ...state,

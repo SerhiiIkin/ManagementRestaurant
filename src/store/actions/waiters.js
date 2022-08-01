@@ -5,7 +5,7 @@ export const ACTION_WAITERS_FILTER = "ACTION_WAITERS_FILTER";
 
 export function getWaiters() {
     return (dispatch) => {
-        Api.getTables().then((waiter) => {
+        Api().then((waiter) => {
             return dispatch({
                 type: ACTION_WAITERS_GET,
                 payload: waiter[0].waiters,

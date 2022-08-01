@@ -6,7 +6,7 @@ import CategoryDropdown from "./HoverMenyButton.js";
 function Navigation() {
     return (
         <nav className={style.navMenu}>
-            <Link className={style.link} to="/">
+            <Link className={style.link} to="ManagementRestaurant/">
                 Home
             </Link>
             <CategoryDropdown title="Table List" />

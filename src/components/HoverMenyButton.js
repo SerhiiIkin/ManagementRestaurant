@@ -68,7 +68,7 @@ export default function CategoryDropdown({ title }) {
                         <Link
                             key={table.id}
                             className={style.link}
-                            to={`/Table=${table.id}`}
+                            to={`ManagementRestaurant/Table=${table.id}`}
                             onSelect={() => {
                                 setIsOpen(false);
                             }}>

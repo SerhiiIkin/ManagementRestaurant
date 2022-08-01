@@ -1,14 +1,18 @@
-class Api {
-    static URL = "https://62057f8a161670001741bbf0.mockapi.io/";
+function Api() {
+    const URL = "https://62057f8a161670001741bbf0.mockapi.io/";
 
-    static getTables() {
-        async function load() {
-            const response = await fetch(`${Api.URL}/tables`);
+    async function getTables() {
+        const response = await fetch(`${URL}/tables`);
 
+        if (response.ok) {
             return await response.json();
         }
-        return load();
+        const errorMessage = new Error("cant get data");
+        
+        return errorMessage
     }
+
+    return getTables();
 }
 
 export default Api;
