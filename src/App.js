@@ -8,6 +8,8 @@ import Home from "./pages/Home/Home";
 import "./App.module.css";
 import NotFound from "./components/NotFound";
 import Table from "./pages/Table/Table";
+import { getWaiters } from "./store/actions/waiters";
+import { getMenu } from "./store/actions/menu";
 
 function App() {
     const dispatch = useDispatch();
@@ -15,6 +17,8 @@ function App() {
 
     useEffect(() => {
         dispatch(getTablesList());
+        dispatch(getWaiters())
+        dispatch(getMenu())
     }, [dispatch]);
 
     return (
