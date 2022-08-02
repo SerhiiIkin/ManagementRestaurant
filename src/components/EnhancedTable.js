@@ -164,7 +164,7 @@ function EnhancedTable({ rows, table }) {
                 <EnhancedTableToolbar categories={rows.categories} />
                 <TableContainer>
                     <Table
-                        sx={{ minWidth: 750 }}
+                        sx={{ minWidth: 300 }}
                         aria-labelledby="tableTitle"
                         size={"small"}>
                         <EnhancedTableHead

@@ -10,14 +10,13 @@ function Home() {
 
     return (
         <>
-            <Grid container spacing={4}>
+            <Grid
+                container
+                spacing={{ xs: 1, md: 2 }}
+                >
                 {tables.map((table) => {
                     return (
-                        <Grid
-                            style={{ display: "flex" }}
-                            key={table.id}
-                            item
-                            xs={4}>
+                        <Grid xs={12} sm={6} md={4}  key={table.id} item>
                             <div
                                 style={{
                                     display: "flex",
