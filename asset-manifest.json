@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/ManagementRestaurant/static/css/main.e6aa7e3e.css",
-    "main.js": "/ManagementRestaurant/static/js/main.831d98ea.js",
+    "main.css": "/ManagementRestaurant/static/css/main.ea9ab9c1.css",
+    "main.js": "/ManagementRestaurant/static/js/main.7f5be31a.js",
     "static/media/table.jpg": "/ManagementRestaurant/static/media/table.5614cec7e7ed4a2bff33.jpg",
     "index.html": "/ManagementRestaurant/index.html",
-    "main.e6aa7e3e.css.map": "/ManagementRestaurant/static/css/main.e6aa7e3e.css.map",
-    "main.831d98ea.js.map": "/ManagementRestaurant/static/js/main.831d98ea.js.map"
+    "main.ea9ab9c1.css.map": "/ManagementRestaurant/static/css/main.ea9ab9c1.css.map",
+    "main.7f5be31a.js.map": "/ManagementRestaurant/static/js/main.7f5be31a.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6aa7e3e.css",
-    "static/js/main.831d98ea.js"
+    "static/css/main.ea9ab9c1.css",
+    "static/js/main.7f5be31a.js"
   ]
 }
