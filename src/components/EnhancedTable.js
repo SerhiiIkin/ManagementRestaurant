@@ -16,6 +16,7 @@ import { visuallyHidden } from "@mui/utils";
 import { useDispatch } from "react-redux";
 import { addOrSub, changeStatusCheckbox } from "../store/actions/table";
 import SelectQuantity from "./SelectQuantity";
+import style from "./EnchancedTable.module.css";
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -159,12 +160,12 @@ function EnhancedTable({ rows, table }) {
             : 0;
 
     return (
-        <Box sx={{ width: "100%" }}>
+        <Box sx={{ width: "100%", minWidth: "370px" }}>
             <Paper sx={{ width: "100%", mb: 2 }}>
                 <EnhancedTableToolbar categories={rows.categories} />
                 <TableContainer>
                     <Table
-                        sx={{ minWidth: 300 }}
+                        sx={{ minWidth: "280px" }}
                         aria-labelledby="tableTitle"
                         size={"small"}>
                         <EnhancedTableHead
@@ -235,6 +236,7 @@ function EnhancedTable({ rows, table }) {
                     </Table>
                 </TableContainer>
                 <TablePagination
+                    className={style.pagi}
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
                     count={rows.products.length}
