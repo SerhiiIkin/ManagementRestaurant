@@ -16,7 +16,7 @@ import { visuallyHidden } from "@mui/utils";
 import { useDispatch } from "react-redux";
 import { addOrSub, changeStatusCheckbox } from "../store/actions/table";
 import SelectQuantity from "./SelectQuantity";
-import style from "./EnchancedTable.module.css";
+import "./EnchancedTable.css";
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -160,12 +160,11 @@ function EnhancedTable({ rows, table }) {
             : 0;
 
     return (
-        <Box sx={{ width: "100%", minWidth: "370px" }}>
+        <Box >
             <Paper sx={{ width: "100%", mb: 2 }}>
                 <EnhancedTableToolbar categories={rows.categories} />
                 <TableContainer>
                     <Table
-                        sx={{ minWidth: "280px" }}
                         aria-labelledby="tableTitle"
                         size={"small"}>
                         <EnhancedTableHead
@@ -192,7 +191,7 @@ function EnhancedTable({ rows, table }) {
                                             tabIndex={-1}
                                             key={row.name}
                                             selected={isItemSelected}>
-                                            <TableCell padding="checkbox">
+                                            <TableCell  padding="none">
                                                 <Checkbox
                                                     onClick={(event) =>
                                                         handleClick(event, row)
@@ -209,13 +208,13 @@ function EnhancedTable({ rows, table }) {
                                                 component="th"
                                                 id={labelId}
                                                 scope="row"
-                                                padding="normal">
+                                                padding="none">
                                                 {row.name}
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell padding="none" align="right">
                                                 {row.price}
                                             </TableCell>
-                                            <TableCell align="right">
+                                            <TableCell padding="none" align="right">
                                                 <SelectQuantity
                                                     table={table}
                                                     row={row}
@@ -236,7 +235,7 @@ function EnhancedTable({ rows, table }) {
                     </Table>
                 </TableContainer>
                 <TablePagination
-                    className={style.pagi}
+                    className="pagi"
                     rowsPerPageOptions={[5, 10, 25]}
                     component="div"
                     count={rows.products.length}
